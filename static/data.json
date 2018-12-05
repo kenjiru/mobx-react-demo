@@ -1,5 +1,22 @@
-{
-  "firstName": "John",
-  "lastName": "Doe",
-  "age": 2
-}
+[
+  {
+    "firstName": "Foo",
+    "lastName": "Doe",
+    "age": 2
+  },
+  {
+    "firstName": "Bar",
+    "lastName": "Doe",
+    "age": 3
+  },
+  {
+    "firstName": "Baz",
+    "lastName": "Doe",
+    "age": 4
+  },
+  {
+    "firstName": "Haaz",
+    "lastName": "Doe",
+    "age": 5
+  }
+]

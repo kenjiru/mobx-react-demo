@@ -1,14 +1,14 @@
 import { inject } from 'mobx-react';
 import React from 'react';
 import { FunctionComponent } from 'react';
-import { ConsumerInformationStore } from 'src/ConsumerInformationStore';
+import { UserStore } from 'UserStore.ts';
 
 interface Props {
-    consumerInformationStore?: ConsumerInformationStore;
+    userStore?: UserStore;
 }
 
-export const GetDataButton: FunctionComponent<Props> = inject('consumerInformationStore')(
-    ({ consumerInformationStore }) => (
-        <button onClick={consumerInformationStore.getData}>Get Data</button>
+export const GetDataButton: FunctionComponent<Props> = inject('userStore')(
+    ({ userStore }) => (
+        <button onClick={userStore.getData}>Get Data</button>
     ),
 );

@@ -1,9 +1,11 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-    mode: 'development',
+    devtool: "eval",
     entry: './src/index.tsx',
     module: {
         rules: [
@@ -28,10 +30,15 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'build')
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin(),
+        new webpack.SourceMapDevToolPlugin(),
+        new CopyWebpackPlugin([{
+            from: '*',
+            context: 'static',
+        }]),
     ],
     devServer: {
         contentBase: './static',
